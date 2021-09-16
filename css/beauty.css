@@ -23,13 +23,12 @@ header {
 }
 
 body {
-  background: url('images/Zxcursed.gif');
+  background: url('../images/Zxcursed.gif');
   background-size: 50%;
 }
 
 #downText {
   position: absolute;
-
   text-align: center;
 }
 
