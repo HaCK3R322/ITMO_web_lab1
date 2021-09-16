@@ -1,0 +1,65 @@
+.choosingName {
+  position: relative;
+
+  height: 75px;
+  width: 90%;
+  left: 5%;
+  margin-top: 30px;
+  top: 30px;
+
+  border-radius: 10px;
+
+  font-size: 20px;
+  font-family: serif;
+  text-align: left;
+  vertical-align: center;
+  color: white;
+
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
+.choosingName p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+}
+
+.coordsInput {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  font-size: 20px;
+}
+
+.coordsInput select {
+  width: 176px;
+  height: 30px;
+  text-align: center;
+}
+
+#textBox {
+  height: 25px;
+}
+
+input[type="text"]::placeholder {
+  text-align: center;
+}
+
+#button {
+  height: 100%;
+  width: 30%;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  left: 0%;
+}
+
+#resultText {
+  position: absolute;
+  left: 40%;
+}

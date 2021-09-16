@@ -1,0 +1,45 @@
+header {
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100%;
+  max-width: 1980px;
+  height: 50px;
+  margin: 0 auto;
+
+  font-family: serif;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#ownerName {
+  color: #FFFFFF;
+  float: left;
+  margin-left: 10%;
+}
+
+#labName {
+  color: #FFFFFF;
+  float: right;
+  margin-right: 10%;
+}
+
+body {
+  background: url('images/Zxcursed.gif');
+  background-size: 50%;
+}
+
+#downText {
+  position: absolute;
+
+  text-align: center;
+}
+
+.choosing {
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 500px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
