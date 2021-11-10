@@ -2,6 +2,7 @@
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lab1</title>
     <link rel="stylesheet" href="css/beauty.css">
     <link rel="stylesheet" href="css/coordinates.css">
@@ -13,7 +14,7 @@
     <header>
       <p id="ownerName">Этот прекрасный сайт был сделан с любовью и трепетом человеком по
         имени <b>Иван Андросов</b>, который учится в группе <b>P3210.</b></p>
-      <p id="labName">Номер варианта: <b>10101</b>.</p>
+      <p id="labName">Номер варианта: <b>10102</b>.</p>
     </header>
 
     <br><br>
@@ -22,13 +23,16 @@
 
       <div id="coordinates-background"> <!-- white space -->
         <div id="graphic-space"> <!-- invisible square to ez calculate coordinates graphic -->
+          <!-- figures -->
           <div id="square"></div>
           <div id="round-square"></div>
           <div id="triangle"></div>
 
+          <!-- coordinate lines -->
           <div id="coordinates-x"></div>
           <div id="coordinates-y"></div>
 
+          <!-- "R" -->
           <div id="coordinates-topR" class="horizontal-line">&nbsp;&nbsp;&nbsp;&nbsp;R/2</div>
           <div id="coordinates-top2R" class="horizontal-line">&nbsp;&nbsp;&nbsp;&nbsp;R</div>
           <div id="coordinates-bottomR" class="horizontal-line">&nbsp;&nbsp;&nbsp;&nbsp;&#8209;R/2</div>
@@ -38,38 +42,61 @@
           <div id="coordinates-rightR" class="vertical-line"><br>R/2</div>
           <div id="coordinates-right2R" class="vertical-line"><br>R</div>
 
-
+          <!-- arrows -->
           <div id="coordinates-rightArrow"> &#9658; </div>
           <div id="coordinates-upArrow"> &#9650; </div>
         </div>
       </div>
 
+      <!-- choosing X Y and R -->
       <form class="formWithValidation">
-        <div id="chooseX" class="choosingName">
+        <!-- x -->
+        <div id="chooseX" class="choosingDivsSpace">
           <p><b>выберите X:</b></p>
-          <div id="xInput" class="coordsInput">
-            <select id="xSelect" name="X">
-              <option value="-2">-2</option>
-              <option value="-1.5">-1.5</option>
-              <option value="-1">-1</option>
-              <option value="-0.5">-0.5</option>
-              <option value="-0" selected>0</option>
-              <option value="0.5">0.5</option>
-              <option value="1">1</option>
-              <option value="1.5">1.5</option>
-              <option value="2">2</option>
-            </select>
+          <div id="xInputNegativeNumbers" class="coordsInput">
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="-5">-5
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="-4">-4
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="-3">-3
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="-2">-2
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="-1">-1
+            </label>
+          </div>
+          <!-- опустим момент что ноль число не положительное и не отрицательное) -->
+          <div id="xInputPositiveNumbers" class="coordsInput">
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="0">0
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="1">1
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="2">2
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="X" value="3">3
+            </label>
           </div>
         </div>
 
-        <div id="chooseY" class="choosingName">
+        <!-- y -->
+        <div id="chooseY" class="choosingDivsSpace">
           <p><b>введите Y:</b></p>
           <div id="yInput" class="coordsInput">
-            <input id="textBox" type="text" name="Y" placeholder="(-3 ... 5)">
+            <input id="textBox" type="text" name="Y" placeholder="(-3 ... 3)">
           </div>
         </div>
 
-        <div id="chooseR" class="choosingName">
+        <!-- r -->
+        <div id="chooseR" class="choosingDivsSpace">
           <p><b>выберите R:</b></p>
           <div id="rInput" class="coordsInput">
             <label class="radio-inline">
@@ -90,7 +117,8 @@
           </div>
         </div>
 
-        <div id="checkElement" class="choosingName">
+        <!-- check button -->
+        <div id="checkElement" class="choosingDivsSpace">
           <input id="button" type="button" value="Проверить" onclick="validate();">
           <p id="resultText"><b>Результат: </b></p>
         </div>

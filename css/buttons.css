@@ -1,4 +1,4 @@
-.choosingName {
+.choosingDivsSpace {
   position: relative;
 
   height: 75px;
@@ -18,7 +18,7 @@
   background-color: rgba(50, 50, 50, 0.5);
 }
 
-.choosingName p {
+.choosingDivsSpace p {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -39,6 +39,15 @@
   width: 176px;
   height: 30px;
   text-align: center;
+}
+
+#xInputPositiveNumbers {
+  position: absolute;
+  top: 30%;
+}
+
+#xInputNegativeNumbers {
+  bottom: 50%;
 }
 
 #textBox {
@@ -62,4 +71,31 @@ input[type="text"]::placeholder {
 #resultText {
   position: absolute;
   left: 40%;
+}
+
+@media only screen and (max-width: 1300px ) {
+  .choosingDivsSpace {
+    margin-top: 0px;
+    top: 0px;
+  }
+
+  .choosingDivsSpace p {
+    top: 20%;
+  }
+
+  .coordsInput {
+    top: 70%;
+    transform: translate(0, -50%);
+  }
+
+  #button {
+    font-size: 10px;
+  }
+
+  #resultText {
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    transform: translate(0, 20%);
+  }
 }

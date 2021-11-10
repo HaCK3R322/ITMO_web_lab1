@@ -20,29 +20,48 @@ function check(x, y, r) {
 }
 
 function validate() {
-  let X = document.getElementById("xSelect").value;
-  let Y = document.getElementById("textBox").value;
-  let R;
+  let X;
+  let XArr = document.getElementsByName("X");
+  let xCheckedCount = 0; // count how much x was checked
+  for(var i = 0; i < XArr.length; i++) {
+    if(XArr[i].type == "checkbox" && XArr[i].checked) {
+      X = XArr[i].value;
+      xCheckedCount += 1;
+    }
+  }
+  alert("x: " + X);
 
+  let Y = document.getElementById("textBox").value;
+  if(Y === "") {
+    Y = 0;
+  }
+  alert("y: " + Y);
+
+  let R;
   let RArr = document.getElementsByName("R");
   for(var i = 0; i < RArr.length; i++) {
     if (RArr[i].type == "radio" && RArr[i].checked) {
             R = RArr[i].value;
         }
   }
+  alert("r: " + R)
 
-  if(!isNaN(Y)) {
-    if(Y <= -3 || Y >= 5) {
-      let yString = String(Y);
-      if(!(yString.substring(0, 4) === "-2.9" || yString.substring(0, 4) === "4.99")) {
-        alert("Y out of range! Please change Y value. [Y range: (-3; 5)]");
+  if(xCheckedCount == 1) {
+    if(!isNaN(Y)) {
+      if(Y <= -3 || Y >= 3) {
+        let yString = String(Y);
+        if(!(yString.substring(0, 4) === "-2.9" || yString.substring(0, 4) === "2.99")) {
+          alert("Y out of range! Please change Y value. [Y range: (-3; 3)]");
+        } else {
+          check(X, Y, R);
+        }
       } else {
         check(X, Y, R);
       }
     } else {
-      check(X, Y, R);
+      alert("Please enter a number for Y .");
     }
   } else {
-    alert("Please enter a number for Y .");
+    alert("X must be checked 1 and only 1 time!")
   }
 }
