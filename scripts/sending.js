@@ -3,7 +3,6 @@ function showResults(x, y, r, result) {
 
   let tableContainer = document.createElement("div");
   tableContainer.setAttribute("id", "tableContainer");
-  results.insertBefore(tableContainer, results.firstElementChild.nextSibling);
 
   let table = document.createElement("table");
   tableContainer.appendChild(table);
@@ -15,16 +14,29 @@ function showResults(x, y, r, result) {
   let r_cell = row.insertCell(-1);
   let result_cell = row.insertCell(-1);
 
+  if(y.toString().length > 5) {
+    if(y > 0) {
+      y = y.toString().substring(0, 5);
+    } else {
+      y = y.toString().substring(0, 6);
+    }
+  }
+
   x_cell.innerHTML = x;
   y_cell.innerHTML = y;
   r_cell.innerHTML = r;
 
+  // results
   if(result === "valid") {
     result_cell.innerHTML = "ПОПАЛ";
     result_cell.setAttribute("style", "width:50%;color:green;");
-  } else {
+    results.insertBefore(tableContainer, results.firstElementChild.nextSibling);
+  } else if(result === "invalid") {
     result_cell.innerHTML = "МИМО";
     result_cell.setAttribute("style", "width:50%;color:red;");
+    results.insertBefore(tableContainer, results.firstElementChild.nextSibling);
+  } else {
+    alert("НЕ ЛОМАЙ САЙТ ПЖ (выбирайте пожалуйста из предложенных значений!)");
   }
 }
 
@@ -44,7 +56,11 @@ function check(x, y, r) {
           let resultText = document.getElementById('resultText');
           resultText.innerHTML = "Результат: мимо";
         }
+        alert(responseText);
         showResults(x, y, r, responseText);
+      } else {
+        alert("Ошибка сервера!");
+        document.location.href = "https://se.ifmo.ru/~s309629/404.html";
       }
     }
   };
@@ -75,6 +91,7 @@ function validate() {
   }
 
   if(xCheckedCount == 1) {
+    Y = Y.toString().replace(",", ".");
     if(!isNaN(Y)) {
       if(Y <= -3 || Y >= 3) {
         let yString = String(Y);
